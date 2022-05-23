@@ -1,0 +1,11 @@
+import numpy as np
+import math
+a=0.872664626
+b=0.872664626
+t=0.3490658504
+f=math.sqrt(3.986005*10**(14)/(450000+6371000)**3)
+dt=0.1
+for i in range (0,500,1):
+  HN=np.array([[math.cos(t)*math.cos(a)-math.sin(t)*math.cos(b)*math.sin(a), math.cos(t)*math.sin(a)+math.sin(t)*math.cos(b)*math.cos(a),math.sin(t)*math.sin(b)],[-math.sin(t)*math.cos(a)-math.sin(t)*math.cos(b)*math.sin(a),-math.sin(t)*math.sin(a)+math.cos(t)*math.cos(b)*math.cos(a),math.cos(t)*math.sin(b)],[math.sin(b)*math.sin(a),-math.sin(b)*math.cos(a),math.cos(b)]])
+  t=t+dt*f
+print(HN)
